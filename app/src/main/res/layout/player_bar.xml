@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/playerBar" android:layout_width="match_parent" android:layout_height="wrap_content"
+    android:orientation="horizontal" android:gravity="center_vertical" android:background="@color/surface"
+    android:padding="10dp" android:visibility="gone" android:elevation="8dp">
+    <ImageView android:id="@+id/pbLogo" android:layout_width="48dp" android:layout_height="48dp"
+        android:background="@drawable/bg_logo" android:scaleType="centerCrop" android:padding="2dp"
+        android:src="@drawable/ic_radio"/>
+    <LinearLayout android:layout_width="0dp" android:layout_weight="1" android:layout_height="wrap_content"
+        android:orientation="vertical" android:paddingStart="12dp" android:paddingEnd="8dp">
+        <TextView android:id="@+id/pbTitle" android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:textColor="@color/text" android:textSize="15sp" android:textStyle="bold" android:maxLines="1" android:ellipsize="end"/>
+        <TextView android:id="@+id/pbSub" android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:textColor="@color/text2" android:textSize="12sp" android:maxLines="1" android:ellipsize="marquee"
+            android:singleLine="true" android:marqueeRepeatLimit="marquee_forever"/>
+    </LinearLayout>
+    <ProgressBar android:id="@+id/pbLoading" android:layout_width="28dp" android:layout_height="28dp"
+        android:layout_marginEnd="8dp" android:visibility="gone" android:indeterminateTint="@color/accent"/>
+    <ImageButton android:id="@+id/pbFav" android:layout_width="40dp" android:layout_height="40dp"
+        android:background="?android:attr/selectableItemBackgroundBorderless" android:src="@drawable/ic_star_border"/>
+    <ImageButton android:id="@+id/pbPlay" android:layout_width="44dp" android:layout_height="44dp"
+        android:layout_marginStart="4dp" android:background="@drawable/bg_round_accent" android:src="@drawable/ic_pause"/>
+    <ImageButton android:id="@+id/pbStop" android:layout_width="40dp" android:layout_height="40dp"
+        android:layout_marginStart="4dp" android:background="?android:attr/selectableItemBackgroundBorderless" android:src="@drawable/ic_stop"/>
+</LinearLayout>
