@@ -1,0 +1,43 @@
+plugins { id 'com.android.application' }
+
+android {
+    namespace 'com.worldradio.app'
+    compileSdk 34
+    defaultConfig {
+        applicationId "com.worldradio.app"
+        minSdk 21
+        targetSdk 34
+        versionCode 1
+        versionName "1.0"
+        multiDexEnabled true
+    }
+    signingConfigs {
+        release {
+            storeFile file("../worldradio.keystore")
+            storePassword "worldradio"
+            keyAlias "worldradio"
+            keyPassword "worldradio"
+        }
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            signingConfig signingConfigs.release
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    lint { checkReleaseBuilds false; abortOnError false }
+}
+
+dependencies {
+    def media3 = "1.3.1"
+    implementation "androidx.media3:media3-exoplayer:$media3"
+    implementation "androidx.media3:media3-exoplayer-hls:$media3"
+    implementation "androidx.media3:media3-session:$media3"
+    implementation "androidx.multidex:multidex:2.0.1"
+    implementation "androidx.core:core:1.13.1"
+    implementation "androidx.annotation:annotation:1.8.0"
+}
